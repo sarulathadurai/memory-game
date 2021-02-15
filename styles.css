@@ -4,16 +4,30 @@
     box-sizing: border-box;
 }
 
+html {
+  height: auto;
+  min-height: 100%;
+}
+
 body{
-    height:100vh;
-    display: flex;
+    /* height:100vh; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
     background:linear-gradient(#131518,#6be320)
 }
 
+#intro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .play-card{
-  display: block;
+  /* display: block;
   position: relative;
-  margin: auto;
+  */
+  margin: 5% auto; 
   background-color: black;
   width: 640px;
   border-radius: 10px;
@@ -21,7 +35,7 @@ body{
 }
 
 .play-again{
-  display:none;
+  display:block;
   position: relative;
   margin: auto;
   background-color: black;
@@ -64,8 +78,10 @@ body{
 .memory-game{
     width: 640px;
     height:640px;
+    position: relative;
+    padding: 10px;
     margin:auto;
-    display: none;
+    display: flex;
     flex-wrap:wrap;
     perspective: 1000px;
 }
@@ -119,4 +135,38 @@ button {
   position: relative;
   margin: auto;
 
+}
+
+#header{
+  float: left;
+  background-color: #50b242;
+  padding: 3px;
+  margin: 10px 10px;
+  border: 10px solid#6be320;
+}
+
+.finalCard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.lifeStyle{
+  height:50px;
+  width: 30px;
+  margin: 0 2px;
+}
+
+@media only screen and (max-width: 600px){
+  .memory-card {
+    width: calc(25% - 20px);
+    height: calc(33.333% - 30px);
+    margin: 10px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(13, 216, 40, 0.3);
+    transform:scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+  }
 }
