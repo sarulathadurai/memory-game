@@ -5,7 +5,8 @@ let firstCard, secondCard;
 let lockCard = false;
 let count = 0;
 let rightSound, wrongSound, life = 6;
-
+let myMusic = new AddSound("Audio/Bounce-Light-2.mp3")
+myMusic.play();
 
 rightSound = new AddSound("Audio/Bells4.mp3");
 wrongSound = new AddSound("Audio/Bells1.mp3");
@@ -38,6 +39,7 @@ function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
     count++;
+    setTimeout(()=>{rightSound.stop();},1300)
     if (count === 6) {
         window.location.href = "endGame.html"
         sessionStorage.setItem("life", life);
